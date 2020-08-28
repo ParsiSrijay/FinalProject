@@ -1,0 +1,145 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+    <link href="{%static 'css/navbar1.css'%}" rel="stylesheet">
+
+</head>
+<body>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
+</script>
+<nav class="navbar navbar-expand-lg navbar-mainbg fixed-top">
+        <a class="navbar-brand navbar-logo" href="{% url 'portal' %}">IMO Portal</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="float:right">
+                        <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/signup"><i class="fas fa-university"></i>Add SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/display"><i class="far fa-list-alt"></i>List of SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/gateway"><i class="fas fa-calculator"></i>Taxes</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/install"><i class="far fa-address-book"></i>SHG Installment</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/acc/"><i class="fas fa-business-time"></i>Financial Position</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="#"><i class="far fa-chart-bar"></i>Statistics</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/"><i class="far fa-user-circle"></i>Logout</a>
+                </li>
+
+            </ul>
+    </nav>
+<br />
+<br/>
+<br/>
+<div class="row">
+  <div class="col-sm-2">
+      <div class="list-group">
+          <li class="list-group-item active" style="background-color:#5161ce"></li>
+
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+              <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cashbook</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/cashAcc">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">General Ledger</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/first">Add</a>
+                  <a class="dropdown-item" href="http://127.0.0.1:8000/acc/edit">Edit</a>
+                  <a class="dropdown-item" href="http://127.0.0.1:8000/acc/display">Display</a>
+              </div>
+          </li>
+
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Loan Register</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/portal/dispLR">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Receipts & Payments</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/receipt">Add</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/receipt/display">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Income & Expenditure</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/iedisp">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item list-group-item-action list-group-item-light" style="background-color:#fafcfc">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Balance Sheet</button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/balsheet">Display</a>
+              </div>
+          </li>
+
+      </div>
+  </div>
+
+    <div class="col-8">
+    {%if success%}
+            <div class="alert alert-info alert-dismissible" role="alert">
+                {{success}} <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+        {%endif%}
+    {%for d in details%}
+        <div class="container p-3 my-3 border" style="background-color:#fafcfc">
+            <form method="POST">
+                {% csrf_token %}
+              <div class="form-group">
+                  <label for="Account Name"><b>Account Name &nbsp:&nbsp;&nbsp</b></label>  {{d.AccountName}}
+                <input type="hidden" class="form-control" id="account" name="account" value="{{d.AccountName}}" readonly>
+              </div>
+                <div class="form-group">
+                <label for="Account Type"><b>Account Type &nbsp;&nbsp;&nbsp:&nbsp;&nbsp </b></label>
+                    <input type="hidden" class="form-control" id="TransctionType" name="TransctionType" value="{{d.TransctionType}}" readonly>
+              {%ifequal d.TransctionType "Debit"%}
+                Debit
+                {%else%}
+                Credit
+
+                {%endifequal%}
+                </div>
+              <div class="form-group">
+                  <label for="Particulars"><b>Particulars &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp </b></label> {{d.Particulars}}
+                <input type="hidden" class="form-control" id="particulars" name="particulars" value="{{d.Particulars}}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="Amount"><b>Amount &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp</b></label> {{d.Amount}}
+                <input type="hidden" class="form-control" id="amount" name="amount" value="{{d.Amount}}" readonly>
+              </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" name="action" value="edit">Edit &nbsp<i class='fas fa-long-arrow-alt-right'></i></button><span style="color:white">  sf </span>
+                    <button type="submit" class="btn btn-primary" name="action" value="delete">Delete &nbsp<i class='fas fa-long-arrow-alt-right'></i></button>
+                </div>
+
+            </form>
+        </div>
+    {%endfor%}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

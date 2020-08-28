@@ -1,0 +1,107 @@
+{% load static %}
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Approve Loan</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+
+    <link href="{%static 'css/navbar1.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+		<nav class="navbar navbar-expand-lg navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="{% url 'portal' %}">IMO Portal</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="float:right">
+                        <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/signup"><i class="fas fa-university"></i>Add SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/display"><i class="far fa-list-alt"></i>List of SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="#"><i class="fas fa-calculator"></i>Taxes</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/install"><i class="far fa-address-book"></i>SHG Installment</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="#"><i class="fas fa-business-time"></i>Financial Position</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="#"><i class="far fa-chart-bar"></i>Statistics</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/logout"><i class="far fa-user-circle"></i>Logout</a>
+                </li>
+
+            </ul>
+    </nav>
+        <div class="container">
+        <br/>
+  <h2 style="text-align:center">APPROVE SHG LOAN<h6 style="text-align:right;color:red">* are mandatory</h6></h2>
+            {%if Content%}
+            <div class="alert alert-info alert-dismissible">
+                <!--<a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a>-->
+                <h5><span id="test" ><b>{{Content}}</b></span></h5>
+                <h4>Do you still want to accept Loan???</h4>
+            </div>
+            {%endif%}
+  <form method="POST" >
+    {% csrf_token %}
+      <table class="table table-borderless">
+        <thead>
+        </thead>
+        <tr>
+            <td><label>Name of SHG <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control"   value="{{Name}}" name="name" readonly/></td>
+            <td><label>Activity Name <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control"   value="{{Activity}}" name="act" readonly/></td>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Loan Amount (in Lakhs) <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control" placeholder="" value="{{Amount}}" name="amt" readonly/></td>
+            <td><label>No. of women beneficiaries <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control"  placeholder="" value="{{Woman_beneficiaries}}" name="wb" readonly/></td>
+        </tr>
+          <tr>
+              <td><label>Phone Number <b><span style="color:red">* </span></b> :  </label>
+                <input type="number" class="form-control" placeholder="" value="{{phno}}" name="phno" readonly/></td>
+              <td><label>Address <b><span style="color:red">* </span></b> :  </label>
+                <input type="textarea" class="form-control" placeholder="" value="{{Location}}" name="location" readonly/></td>
+        </tr>
+          <tr>
+              <td><label>Time period(in years) <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control" placeholder="" value="{{TimePeriod}}" name="tp" readonly/></td>
+              <td><label>Rate of Interest <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control" placeholder="" value="{{Rate}}" name="rate" readonly/></td>
+        </tr>
+          <tr>
+              <td><label>Years In Current Job <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control" placeholder="" value="{{YOE}}" name="ycj" readonly/></td>
+              <td><label>Previous Debt <b><span style="color:red">* </span></b> :  </label>
+                <input type="text" class="form-control" placeholder="" value="{{PD}}" name="pd" readonly/></td>
+              </td>
+        </tr>
+      </table>
+      <div class="text-center">
+      <button type="submit" class="btn btn-primary" name="action" value="approve">Approve</button>
+        <button type="submit" class="btn btn-primary" name="action" value="reject">Reject</button>
+      </div>
+</form>
+</div>
+
+
+
+</body>
+</html>

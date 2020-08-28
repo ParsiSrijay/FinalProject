@@ -1,0 +1,126 @@
+{%load static %}
+<html>
+  <head onload="submitPayuForm()">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{%static 'css/navbar1.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    var hash = "{{ hashh }}";
+    function submitPayuForm() {
+      if(hash =='') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="{% url 'portal' %}">IMO Portal</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="float:right">
+                        <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal1"><i class="fas fa-university"></i>Details</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/gateway"><i class="fas fa-calculator"></i>Payment</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/"><i class="far fa-user-circle"></i>Logout</a>
+                </li>
+
+            </ul>
+    </nav>
+
+    <br/>
+  <div class="container">
+    <h1 style="text-align:center">Payment Gateway</h1>
+    <br/>
+
+    {% if error %}
+
+      <span style="color:red">Please fill all mandatory fields.</span>
+      {% endif %}
+      <form action={{ action }} method="post" name="payuForm">
+          {% csrf_token %}
+      <input type="hidden" name="key" value="{{ MERCHANT_KEY }}" />
+      <input type="hidden" name="hash_string" value="{{ hash_string }}" />
+      <input type="hidden" name="hash" value="{{ hashh }}"/>
+       <input type="hidden" name="posted" value="{{ posted }}"/>
+      <input type="hidden" name="txnid" value="{{ txnid }}" />
+
+          <div class="row">
+          <div class="col-sm-12">
+              <label><b>Amount : <span style="color:red">*</span></b></label>
+          <input type="text" placeholder="In rupees" class="form-control" name="amount" value="{{ posted.amount|default:'' }}" required/>
+
+          </div>
+          </div>
+          <br/>
+          <div class="row">
+              <div class="col-sm-12">
+          <label><b>First Name : <span style="color:red">*</span></b></label>
+          <input type="text" placeholder="Full name" class="form-control" name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}" />
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+              <div class="col-sm-12">
+        <label><b>Email : <span style="color:red">*</span></b></label>
+          <input type="text" placeholder="abc@xyz.com" class="form-control" name="email" id="email" value="{{ posted.email|default:'' }}" required/>
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+              <div class="col-sm-12">
+          <label><b>Phone Number : <span style="color:red">*</span></b></label>
+          <input type="text" placeholder="+91" class="form-control" name="phone" value="{{ posted.phone|default:'' }}" required/>
+              </div>
+          </div>
+          <br/>
+          <div class="row">
+              <div class="col-sm-12">
+        <label><b>Comments : <span style="color:red">*</span></b></label>
+          <textarea rows="1" cols="30" class="form-control" name="productinfo" required>{{ posted.productinfo|default:'' }}</textarea>
+              </div>
+          </div>
+        <input type="hidden" name="surl" value="http://127.0.0.1:8000/portal/gateway/success/"  />
+      <input type="hidden" name="furl" value="http://127.0.0.1:8000/portal/gateway/failure/" />
+
+
+    <input type="hidden" name="service_provider" value="payu_paisa" size="64" />
+
+
+
+          </td><input type="hidden" name="lastname" id="lastname" value="{{ posted.lastname }}" /></td>
+          <td><input type="hidden" name="address1" value="{{ posted.address1 }}" /></td>
+          <td><input type="hidden" name="address2" value="{{ posted.address2 }}" /></td>
+          <td><input type="hidden" name="city" value="{{ posted.city }}" /></td>
+          <td><input type="hidden" name="state" value="{{ posted.state }}" /></td>
+          <td><input type="hidden" name="country" value="{{ posted.country }}" /></td>
+          <td><input type="hidden" name="zipcode" value="{{ posted.zipcode }}" /></td>
+          <td><input type="hidden" name="udf1" value="{{ posted.udf1 }}" /></td>
+          <td><input type="hidden" name="udf2" value="{{ posted.udf2 }}" /></td>
+          <td><input type="hidden" name="udf3" value="{{ posted.udf3 }}" /></td>
+          <td><input type="hidden" name="udf4" value="{{ posted.udf4 }}" /></td>
+          <td><input type="hidden" name="udf5" value="{{ posted.udf5 }}" /></td>
+          <td><input type="hidden" name="pg" value="{{ posted.PG }}" /></td>
+      <br>
+          <div class="text-center">
+     <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+          </div>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"/>
+  </body>
+</html>

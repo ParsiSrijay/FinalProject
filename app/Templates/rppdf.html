@@ -1,0 +1,315 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{%static 'css/navbar1.css'%}" rel="stylesheet">
+    <style>
+
+    h3 {
+        text-align: center;
+    }
+
+</style>
+</head>
+<body>
+
+<!--<nav class="navbar navbar-expand-lg navbar-mainbg fixed-top">
+        <a class="navbar-brand navbar-logo" href="{% url 'portal' %}">IMO Portal</a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="float:right">
+                        <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/signup"><i class="fas fa-university"></i>Add SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/display"><i class="far fa-list-alt"></i>List of SHG</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/gateway"><i class="fas fa-calculator"></i>Taxes</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/portal/install"><i class="far fa-address-book"></i>SHG Installment</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/acc/"><i class="fas fa-business-time"></i>Financial Position</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="#"><i class="far fa-chart-bar"></i>Statistics</a>
+                </li>
+                <li class="nav-item" style="float:right">
+                    <a class="nav-brand navbar-logo" href="http://127.0.0.1:8000/"><i class="far fa-user-circle"></i>Logout</a>
+                </li>
+
+            </ul>
+    </nav>-->
+
+
+  <!--<div class="col-sm-3">
+      <div class="list-group">
+
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cashbook
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/cashAcc">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                General Ledger
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/first">Add</a>
+                  <a class="dropdown-item" href="http://127.0.0.1:8000/acc/edit">Edit</a>
+                  <a class="dropdown-item" href="http://127.0.0.1:8000/acc/display">Display</a>
+              </div>
+          </li>
+
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Loan Register
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/portal/dispLR">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Receipts and Payments
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/receipt">Add</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/receipt/display">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Income And Expenditure
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/iedisp">Display</a>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <button type="button" class="btn text-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Balance Sheet
+              </button>
+              <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/acc/balsheet">Display</a>
+              </div>
+          </li>
+      </div>-->
+<center><h1>Account Statement</h1></center>
+<h2 >Receipts and Payments</h2>
+<table border="1" height="70%" width="70%">
+    <tr>
+        <th colspan="2">Receipts</th>
+        <th colspan="2">Payments</th>
+    </tr>
+    <tr>
+        <td>Opening Balance</td>
+        <td>{{RP.ob}}</td>
+        <td>SHG Loans</td>
+        <td>{{loan.shgl}}</td>
+    </tr>
+    <tr>
+        <td>Membership Fees</td>
+        <td>{{RP.mf}}</td>
+        <td>Fees And Charges</td>
+        <td>{{PT.fac}}</td>
+    </tr>
+    <tr>
+        <td>Fines</td>
+        <td>{{RP.fines}}</td>
+        <td>Salaries</td>
+        <td>{{PT.sal}}</td>
+    </tr>
+    <tr>
+        <td>RMK Funds</td>
+        <td>{{RP.rf}}</td>
+        <td>Admin Expenses</td>
+        <td>{{PT.ae}}</td>
+    </tr>
+    <tr>
+        <td>Principal</td>
+        <td>{{RPAmt.princ}}</td>
+        <td>Stationary</td>
+        <td>{{PT.sta}}</td>
+    </tr>
+    <tr>
+        <td>Interests</td>
+        <td>{{RPAmt.interest}}</td>
+        <td>Miscellaneous</td>
+        <td>{{PT.ms}}</td>
+    </tr>
+    <tr>
+        <td>Miscellaneous</td>
+        <td>{{RP.ms}}</td>
+        <td>Closing Balance</td>
+        <td>{{PT.cb}}</td>
+    </tr>
+    <tr>
+        {%if excess1%}
+            <td></td>
+            <td></td>
+            <td>Excess In Receipts</td>
+            <td>{{excess1}}</td>
+        {%else%}
+            <td>Excess in Payments</td>
+            <td>{{excess2}}</td>
+            <td></td>
+            <td></td>
+        {%endif%}
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>{{bal}}</td>
+        <td>Total</td>
+        <td>{{bal}}</td>
+    </tr>
+</table>
+
+
+<br>
+<br>
+<br>
+<h2 align:center>Income and Expenditure</h2>
+<table border="1" height="70%" width="70%">
+    <tr>
+        <th colspan="2">Expenditure</th>
+        <th colspan="2">Income</th>
+    </tr>
+    <tr>
+
+        <td>Fees And Charges</td>
+        <td>{{iPT.fac}}</td>
+        <td>Membership Fees</td>
+        <td>{{iRP.mf}}</td>
+    </tr>
+    <tr>
+
+        <td>Salaries</td>
+        <td>{{iPT.sal}}</td>
+        <td>Fines</td>
+        <td>{{iRP.fines}}</td>
+    </tr>
+    <tr>
+
+        <td>Admin Expenses</td>
+        <td>{{iPT.ae}}</td>
+        <td>Interests</td>
+        <td>{{iRPAmt.interest}}</td>
+    </tr>
+    <tr>
+
+        <td>Miscellaneous</td>
+        <td>{{iPT.ms}}</td>
+        <td>Miscellaneous</td>
+        <td>{{iRP.ms}}</td>
+    </tr>
+    <tr>
+        {%if iexcess1%}
+
+            <td>Excess In Income</td>
+            <td>{{iexcess1}}</td>
+            <td></td>
+            <td></td>
+        {%else%}
+            <td></td>
+            <td></td>
+            <td>Excess in expenditure</td>
+            <td>{{iexcess2}}</td>
+
+        {%endif%}
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>{{ibal}}</td>
+        <td>Total</td>
+        <td>{{ibal}}</td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+<h2 align:center>Balance Sheet</h2>
+<table border="1" height="70%" width="70%">
+    <tr>
+        <th colspan="2">Liabilities</th>
+        <th colspan="2">Assests</th>
+    </tr>
+    <tr>
+        <td>SHG Loans</td>
+        <td>{{loan.shgl}}</td>
+        <td>Opening Balance</td>
+        <td>{{RP.ob}}</td>
+    </tr>
+    <tr>
+        <td>Stationary</td>
+        <td>{{PT.sta}}</td>
+        <td>RMK Funds</td>
+        <td>{{RP.rf}}</td>
+    </tr>
+    <tr>
+        <td>Closing Balance</td>
+        <td>{{PT.cb}}</td>
+        <td>Principal</td>
+        <td>{{RPAmt.princ}}</td>
+    </tr>
+    <tr>
+        {%ifequal c 1 %}
+            <td>Surplus in Receipts</td>
+            <td>{{excess1}}</td>
+            <td></td>
+            <td></td>
+        {%else%}
+            <td></td>
+            <td></td>
+            <td>Surplus in Payments</td>
+            <td>{{ex2}}</td>
+        {%endifequal%}
+    </tr>
+    <tr>
+        {%ifequal d 1 %}
+            <td>Surpluss in Expenditure</td>
+            <td>{{iexcess2}}</td>
+            <td></td>
+            <td></td>
+        {%else%}
+            <td></td>
+            <td></td>
+            <td>Surpluss in Income</td>
+            <td>{{ex3}}</td>
+        {%endifequal%}
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>{{cap_amt}}</td>
+        <td>Total</td>
+        <td>{{assests_total}}</td>
+    </tr>
+
+</table>
+<br><br><br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <div style="text-align:center; margin-right:-30px;">
+  <h3  > Signature of HEAD</h2>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
